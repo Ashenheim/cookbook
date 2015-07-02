@@ -1,10 +1,12 @@
 <article class="home-block cover-image" style="background-image: url({{site.baseurl}}{{node.images | first}});" alt="{{node.title}});">
-    <a href="{{site.baseurl}}{{node.url}}" class="home-block__link">
 
         <header class="home-block__header">
-            <h3>{{node.title}}</h3>
+            <h3 class="title">{{node.title}}</h3>
             <img src="{{site.baseurl}}{{node.images | first}}" alt="{{node.title}}" class="cover-image__source">
         </header>
 
-    </a>
+        <footer class="home-block__footer">
+            <a href="{{site.baseurl}}{{node.url}}" class="home-block__link">Go</a>
+        </footer>
+
 </article>

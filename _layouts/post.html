@@ -2,32 +2,52 @@
 layout: page
 ---
 
-<article class="article" id="Story">
+<article class="article cover-image" id="Story" style="background-image: url({{site.baseurl}}{{page.images | first}})">
 
-    <a class="home-link" href="{{site.baseurl}}/">
-        {% include svg.html id="close" viewbox="14 14" %}
-    </a>
+    <div class="article__container">
 
-    <header class="article__header scene_element scene_element--fadeindown">
+        <div class="article__banner cover-image" style="background-image: url({{site.baseurl}}{{page.images | first}})">
+            <img src="{{site.baseurl}}{{page.images | first}}" alt="" class="cover-image__source">
+        </div>
 
-        <h1 class="title">
-            {% if page.info.story-title %}<small>{{page.info.story-title}}</small>{% endif %}
-            {{page.title}}
-        </h1>
-        <p class="author">
-            written by: <span>{{ page.author }}</span>
-        </p>
+        <a class="home-link" href="{{site.baseurl}}/">
+            {% include svg.html id="close" viewbox="14 14" %}
+        </a>
 
-        <hr>
+        <header class="article__header scene_element scene_element--fadeindown">
+            <h1 class="title">
+                {% if page.info.story-title %}<small>{{page.info.story-title}}</small>{% endif %}
+                {{page.title}}
+                {% if page.foreign-name %}
+                    <small>({{page.foreign-name}})</small>
+                {% endif %}
+            </h1>
+            <p class="author">
+                written by: <span>{{ page.author }}</span>
+            </p>
+            <hr>
+        </header>
 
-    </header>
-    <section class="article__content scene_element scene_element--fadeinup">
+        <section class="article__content scene_element scene_element--fadeinup">
 
-        {{ content }}
+            <div class="ingredients">
+                <h3>Ingredients:</h3>
+                <ul class="ingredients__list">
+                    {% for ingredient in page.ingredients %}
+                        <li>
+                            <input  id="{{ingredient | replace:' ','' | downcase }}" type="checkbox">
+                            <label for="{{ingredient | replace:' ','' | downcase }}">{{ingredient}}</label>
+                        </li>
+                    {%endfor%}
+                </ul>
+            </div>
 
-    </section>
-    <footer class="article__footer">
+            {{ content }}
 
-    </footer>
+        </section>
+
+        <footer class="article__footer"></footer>
+
+    </div>
 
 </article>

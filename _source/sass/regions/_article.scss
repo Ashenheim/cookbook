@@ -4,11 +4,20 @@
 
 
 .article {
-    @include padding( 0 $gutter $spacing-large );
-    @include margin( $spacing-large null );
-    @include container;
-    background: $c-background;
-    box-shadow: 0 0 13px rgba( $black, .05 );
+
+    @include bp($site-width) {
+        .cover-image {
+            display: none;
+        }
+    }
+
+    &__container {
+        @include padding( 0 $gutter $spacing-large );
+        max-width: $site-width;
+        min-height: 100vh;
+        background: $c-background;
+        box-shadow: 0 0 13px rgba( $black, .05 );
+    }
 
     html.dark-mode & {
         background: invert($c-background);
@@ -19,7 +28,17 @@
     &__header {
         text-align: center;
 
-        >.title {}
+        >.title {
+            font-size: 3em;
+
+            small {
+                display: block;
+                opacity: .8;
+                font-size: .6em;
+                font-style: italic;
+                font-weight: 400;
+            }
+        }
         >.author {
             font-style: italic;
             color: $c-accent--d;
@@ -38,7 +57,7 @@
     }
 
     .cover-image {
-        height: 30em;
+        height: 10em;
         margin-left:  -#{$gutter};
         margin-right: -#{$gutter};
     }

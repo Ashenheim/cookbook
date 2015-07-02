@@ -1,18 +1,17 @@
 ---
 title: Lecho
-synonyms:
-- Lecsó
+foreign-name: Lecsó
 author: Teck Husky
 
 images:
 - /images/lecho/lecho.jpg
 
 ingredients:
-- 1kg Paprika
-- 1-2 unions
-- 2 tomato's
-- spoonfull of sunflower-oil
-- Red Pepper-powder
+- ~1kg Paprika
+- 1-2 medium-sized Onions
+- 2 Tomato's
+- Sunflower oil ( enough to cover the bottom of the pot )
+- 2 big teaspoons of Pepper-powder
 ---
 
 ### Preparations

@@ -15797,14 +15797,18 @@ $(document).ready(function() {
 
     overlay();
     optionsMenu();
-    smoothState();
+    // smoothState();
 
-    $('.home-block__container').flickity({
+    var $slider = $('.home-block__container').flickity({
         // options
         cellAlign: 'left',
-        cellSelector: '.home-block'
+        cellSelector: '.home-block',
+        pageDots: false,
+        prevNextButtons: false,
+        contain: true
     });
-    console.log('Smoothstate');
+
+    $slider.flickity();
 
 
     /* ------------------------------
