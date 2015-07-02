@@ -5,7 +5,8 @@
 
 .article {
 
-    @include bp($site-width) {
+    @include bp( ( $site-width + $gutter ) ) {
+        padding-left: $gutter;
         .cover-image {
             display: none;
         }
