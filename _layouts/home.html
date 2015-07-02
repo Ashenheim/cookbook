@@ -1,0 +1,46 @@
+---
+layout: page
+---
+
+<div class="container" style="background: #FFF; text-align: center;">
+    {{ content }}
+</div>
+
+<section class="article-short__container">
+{% assign stories = site.stories | sort: 'date' %}
+{% for node in stories | limit:6 %}
+
+    <a href="{{site.baseurl}}{{node.url}}" class="article-short__link">
+        <article class="article-short">
+
+            <header class="article__header scene_element scene_element--fadeindown">
+
+
+                <h3>
+                    {{node.title}}
+                    {% if node.info.story-title %} <br> <small>{{node.info.story-title}}</small>{% endif %}
+                </h3>
+
+                <hr>
+
+
+            </header>
+            <div class="article__content scene_element scene_element--fadeinup">
+
+                <p class="content" style="margin-bottom: 0;">
+                    {{ node.content | strip_html | truncatewords: 30 }}
+                    <br>
+                    <small>
+                        <i>
+                            {{ node.date | date: "%d %B %Y" }} -
+                            Words: {{ node.content | number_of_words }}
+                        </i>
+                    </small>
+                </p>
+
+            </div>
+        </article>
+    </a>
+
+{% endfor %}
+</section>

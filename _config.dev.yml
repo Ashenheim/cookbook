@@ -1,0 +1,5 @@
+# CONFIG for Jekyll (Development version)
+
+baseurl:    ""
+dev: true
+highlighter: rouge

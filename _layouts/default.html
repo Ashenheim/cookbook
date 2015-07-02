@@ -1,0 +1,60 @@
+---
+layout: compress
+---
+
+<!doctype html>
+<html class="no-js fontsize-is-medium is-loading overlay-is-active">
+
+    {% include head.html %}
+
+<body class="page-{{ page.title | replace:' ','-' | downcase }}">
+
+    {% include controls.html %}
+
+    <div class="bar__container">
+        <div class="bar" id="progressBar"></div>
+    </div>
+
+    <div class="site-wrap m-scene" id="Page">
+
+        {% include header.html %}
+        <main id="main" class="main-content scene_element scene_element--fadein" data-page-id="page-{{ page.title | replace:' ','-' | downcase }}">
+            {{content}}
+        </main>
+        {% include footer.html %}
+
+    </div>
+    {%comment%}
+    <section class="sidebar">
+        <ul>
+            {% for name in site.data.navigation %}
+            <li>
+                <span class="list-title">{{name}}</span>
+                <ul>
+                    {% for chapter in site.stories %}
+                    {% if chapter.info.story-title == name %}
+                    <li>
+                        <a href="{{chapter.url}}">{{chapter.title}}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {%endcomment%}
+
+    <div id="overlay" class="overlay">
+        <div class="spinner"></div>
+    </div>
+
+
+    {% if site.dev %}
+    <script src="{{ site.baseurl }}/assets/js/global.js"></script>
+    {% else %}
+    <script src="{{ site.baseurl }}/assets/js/global.min.js"></script>
+    {% endif %}
+
+</body>
+</html>

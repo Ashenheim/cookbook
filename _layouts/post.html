@@ -1,0 +1,33 @@
+---
+layout: page
+---
+
+<article class="article" id="Story">
+
+    <a class="home-link" href="{{site.baseurl}}/">
+        {% include svg.html id="close" viewbox="14 14" %}
+    </a>
+
+    <header class="article__header scene_element scene_element--fadeindown">
+
+        <h1 class="title">
+            {% if page.info.story-title %}<small>{{page.info.story-title}}</small>{% endif %}
+            {{page.title}}
+        </h1>
+        <p class="author">
+            written by: <span>{{ page.author }}</span>
+        </p>
+
+        <hr>
+
+    </header>
+    <section class="article__content scene_element scene_element--fadeinup">
+
+        {{ content }}
+
+    </section>
+    <footer class="article__footer">
+
+    </footer>
+
+</article>

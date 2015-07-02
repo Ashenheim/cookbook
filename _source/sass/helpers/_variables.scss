@@ -1,0 +1,37 @@
+/* ====================================
+	Variables
+==================================== */
+
+// Base
+$font-family				: 'Libre Baskerville', $helvetica;
+$font-family--heading		: 'Libre Baskerville', $georgia;
+
+$font-size--small           : 16px;
+$font-size                  : 18px;
+$font-size--large           : 20px;
+
+$site-width					: 760px;
+$gutter						: 30px;
+$columns                    : 4;
+
+$bar-height                 : 8px;
+$sidebar-width              : 280px;
+
+// Spacings
+$spacing-small              : .4em;
+$spacing-medium             : 1em;
+$spacing-large              : 1.8em;
+
+// Animations
+$easing--fast               : 150ms ease-in-out;
+$easing						: 300ms ease-in-out;
+$easing--slow               : 1000ms ease-in-out;
+
+
+
+
+// Media breakpoints
+$bp-huge					: 1140px;
+$bp-large					: 960px;
+$bp-medium					: 780px;
+$bp-small					: 480px;

@@ -1,0 +1,80 @@
+/* ====================================
+    Animations
+==================================== */
+
+.m-scene {
+    .scene_element {
+        animation-duration: 300ms;
+        transition-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        &--fadein {
+            animation-name: fadeIn;
+        }
+        &--fadeinup {
+            animation-name: fadeInUp;
+        }
+        &--fadeindown {
+            animation-name: fadeInDown;
+        }
+        &--zoomin {
+            animation-name: zoomIn;
+        }
+    }
+    // Reversed exit animation
+    &.is-exiting {
+        .scene_element {
+            animation-direction: alternate-reverse;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+// fadeIn
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+// fadeInUp
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 15px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+// fadeInDown
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}

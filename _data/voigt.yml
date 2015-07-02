@@ -1,0 +1,43 @@
+- kracht: "Kracht 0: stil"
+  text: "Niet of nauwelijks zichtbaar, fotografisch waarneembaar"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht0.jpg"
+
+- kracht: "Kracht 1: zeer zwak"
+  text: "Niet of nauwelijks zichtbaar, fotografisch waarneembaar"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht1.jpg"
+
+- kracht: "Kracht 2: zwak"
+  text: "Zwak zichtbare gloed, goed fotografisch waarneembaar"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht2.jpg"
+
+- kracht: "Kracht 3: vrij matig"
+  text: "Zichtbare band, stabiel laag boven de horizon"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht3.jpg"
+
+- kracht: "Kracht 4: matig"
+  text: "Zichtbare band, soms beweeglijk en opklimmend b oven de horizon"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht4.jpg"
+
+- kracht: "Kracht 5: vrij krachtig"
+  text: "TEXT"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht5.jpg"
+
+- kracht: "Kracht 6: krachtig"
+  text: "Goedd zichtbaar, vaak b eweeglijke vormen, soms klerrijk en geregeld tot hoog boven de horizon"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht6.jpg"
+
+- kracht: "Kracht 7: zeer krachtig"
+  text: "Zeer goed zichtbaar, beweeglijk, vaak kleurrijk tot hoog boven de horizon"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht7.jpg"
+
+- kracht: "Kracht 8: stormachtig"
+  text: "Zeer goed zichtbaar, beweeglijk, kleurrijk en tot hoog boven de horizon"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht8.jpg"
+
+- kracht: "Kracht 9: storm"
+  text: "Zeer goed zichtbaar, zeer beweeglijk, kleurrijk en tot hoog aan de hemel"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht9.jpg"
+
+- kracht: "Kracht 10: zware storm"
+  text: "Zeer goed zichtbaar, zeer beweeglijk, kleurrijk en overal aan de hemel"
+  photo: "http://www.noorderlicht.nl/_sitefiles/img/noorderlicht/schaalvvoigt/kracht10.jpg"

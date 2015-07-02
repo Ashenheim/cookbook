@@ -1,0 +1,41 @@
+/* ====================================
+    Sidebar styling
+==================================== */
+
+.sidebar {
+    @include position( fixed, 0 null null 0 );
+    z-index: 2;
+    width: $sidebar-width;
+    height: 100%;
+    background: color('foreground');
+
+    .list-title {
+        font-weight: bold;
+    }
+
+    a { color: color('foreground', 'light'); }
+
+    li {
+        display: block;
+        margin-bottom: 0;
+        border-bottom: 1px solid color('foreground', 'dark');
+
+        li {
+            border: none;
+            margin-left: $gutter;
+            border-left: 1px solid color('foreground', 'dark');
+
+            a {
+                @include padding( $spacing-medium null );
+                font-size: .9em;
+            }
+        }
+
+        a,
+        .list-title {
+            @include padding( $spacing-small $gutter );
+            color: color('foreground', 'light');
+            display: block;
+        }
+    }
+}

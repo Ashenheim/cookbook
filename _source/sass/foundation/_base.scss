@@ -1,0 +1,41 @@
+/* ====================================
+    General site styling
+==================================== */
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    font-size: $font-size;
+    font-family: $font-family;
+    font-smoothing: antialiased;
+    color: $c-text;
+    box-sizing: border-box;
+    background: color('accent');
+    position: relative;
+    height: 100%;
+}
+
+::selection {
+    background: $c-accent;
+    color: $black;
+}
+
+.site-wrap {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 100%;
+    padding-top: $spacing-large;
+    // padding-left: $sidebar-width;
+
+    html.dark-mode & {
+        background: #000;
+    }
+
+    .main-content {
+        @include padding( null $gutter );
+    }
+}

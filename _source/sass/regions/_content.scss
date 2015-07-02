@@ -1,0 +1,183 @@
+/* ====================================
+   Content styling
+==================================== */
+
+
+/*
+    #Progress Bar
+    ------------------------------------ */
+
+
+.bar {
+    @include linear-gradient( top, lighten($c-main,10%), $c-main );
+    height: 0;
+    width: 0;
+    transition: height $easing--fast;
+
+
+    &__container {
+        @include position( fixed, 0 null null 0 );
+        z-index: 10;
+        width: 100%;
+        background: rgba( $black, .8 );
+
+        body.page-home & {
+            display: none;
+        }
+    }
+
+    // html.bar-is-visible & {
+        height: $bar-height;
+    // }
+}
+
+
+
+
+
+/*
+    #Control section
+    ------------------------------------ */
+
+$controls-width: 480px;
+
+.controls {
+    @include position( fixed, null 0 0 null );
+    z-index: 11;
+    width: 100%;
+    max-width: $controls-width;
+    box-shadow: 0 0 30px rgba( $black, .2 );
+
+    &__inner {
+        background: $c-accent;
+        padding: $gutter $gutter;
+        display: none;
+
+        padding-bottom: 100px;
+
+        .controls-is-active & {
+            display: block;
+        }
+
+        html.dark-mode & {
+            background: #222;
+            color: $white;
+        }
+    }
+
+    &__button {
+        @include size(50px);
+        @include position( absolute, null 0 0 null );
+        display: inline-block;
+        background: $white;
+        text-align: center;
+        cursor: pointer;
+        color: #9D9D9D;
+
+        html.dark-mode & {
+            background: #111;
+        }
+
+
+
+        .hamburger {
+            @include position( absolute, 50% null null 50% );
+            transform: translate(-50%,-50%);
+            span { background: $c-accent--d; }
+        }
+
+        &:hover {
+            background: $c-link--hover;
+            span {
+                background: $white;
+            }
+        }
+
+    }
+
+    p { margin-bottom: 0; }
+
+
+    html.fontsize-is-small & #triggerFontSmall,
+    html.fontsize-is-medium & #triggerFontMedium,
+    html.fontsize-is-large & #triggerFontLarge,
+    html.dark-mode & #triggerDarkMode
+    {
+        @include linear-gradient( top, lighten($c-success,10%), $c-success );
+        box-shadow: 0 1px 3px rgba( $black, .25 );
+        color: $white;
+    }
+}
+
+$option-gutter: 1.5%;
+
+.option {
+    @include clearfix;
+    text-align: center;
+
+    & + & {
+        margin-top: $spacing-large;
+    }
+
+    &-list {
+        @extend .list-unstyled;
+        display: block;
+        cursor: pointer;
+
+        li {
+            color: $c-text;
+            width: 100%;
+            display: block;
+            float: left;
+            text-align: center;
+            background: $c-accent--l;
+            padding: 10px 0;
+            border-radius: 2px;
+
+            &:hover {
+                background-color: $white;
+            }
+
+
+
+            &:nth-child(n+2) {
+                margin-left: $option-gutter;
+            }
+        }
+
+        &.items-1 li { width: (100% / 1);}
+        &.items-2 li { width: (99% / 2);}
+        &.items-3 li { width: (98% / 3);}
+        &.items-4 li { width: (97% / 4);}
+
+        @for $i from 1 through 4 {
+            &.items-#{$i} li {
+                width: ( (100% - ($option-gutter * ($i - 1))) / $i);
+            }
+        }
+    }
+}
+
+
+.button-list {
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+
+    li {
+        @include size(2em);
+        margin: 0 10px;
+        line-height: 2em;
+        background: $c-accent--l;
+        display: inline-block;
+        border-radius: 50%;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            background: $c-link--hover;
+            color: $white;
+        }
+    }
+}

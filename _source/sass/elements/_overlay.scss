@@ -1,0 +1,85 @@
+.overlay {
+    @include position( fixed, 0 null null 0 );
+    @include size( 100% );
+    z-index: 9999;
+    transition: all $easing;
+    // display: none;
+    opacity: 0;
+    background: rgba($black, .5);
+
+
+    &:before,
+    &:after {
+        @include position( absolute, 0 null null 0 );
+        z-index: 1;
+        content: '';
+        height: 0;
+        width: 100%;
+        background: $white;
+        transition: all $easing;
+
+        html.dark-mode & {
+            background: lighten($black, 10%);
+        }
+    }
+
+    &:after {
+        top: auto;
+        bottom: 0;
+    }
+
+
+    .overlay-is-active & {
+        opacity: 1;
+        &:before,
+        &:after {
+            height: 50%;
+        }
+    }
+
+
+    .spinner {
+        @include position( absolute, 50% null null 50% );
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        z-index: 2;
+    }
+
+    html.is-loading & {
+
+        .spinner {
+            animation: spinner 600ms forwards;
+        }
+    }
+}
+
+.spinner {
+
+    &:after {
+        content: '';
+        @include size(60px);
+        display: block;
+        float: left;
+        border-radius: 50%;
+        margin: 0 3px;
+        animation: spinnerDot 1.5s linear infinite;
+        border: 10px solid $white;
+        @include border-color( $c-main transparent );
+    }
+}
+
+@keyframes spinner {
+    0%,60% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spinnerDot {
+    0% {
+        transform: rotate(0deg);
+    } 100% {
+        transform: rotate(360deg);
+    }
+}

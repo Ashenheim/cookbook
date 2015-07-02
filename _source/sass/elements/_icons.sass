@@ -1,0 +1,33 @@
+/*
+  Icons (SVG, image icons)
+  ------------------------
+
+#icon
+  &-close
+    +size(14px)
+    fill: currentcolor
+    display: inline-block
+
+
+/*
+  Hamburger menu
+  --------------
+
+$hamburger-height: 3px
+$hamburger-spacing: 5px
+
+.hamburger
+  height: $hamburger-height * 3 + $hamburger-spacing * 2
+  width: 25px
+  display: inline-block
+  position: relative
+  span
+    +position(absolute, 0 0)
+    background: $white
+    height: $hamburger-height
+    width: 100%
+    display: block
+    &:nth-child(2)
+      top: $hamburger-height + $hamburger-spacing
+    &:nth-child(3)
+      top: ($hamburger-height + $hamburger-spacing) * 2

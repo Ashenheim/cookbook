@@ -1,0 +1,16 @@
+/* ====================================
+   Footer
+==================================== */
+
+
+footer.main-footer {
+    @include padding( $spacing-medium null $spacing-large );
+    background: $white;
+
+
+    .wrap {
+        @include container;
+        @include padding( $gutter null );
+        color: $c-accent--d;
+    }
+}

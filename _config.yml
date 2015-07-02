@@ -1,0 +1,49 @@
+# CONFIG for Jekyll
+
+# Permalinks
+permalink:           pretty
+
+# Setup
+title:            Stories
+description: >
+  ## Hello world
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quos error incidunt recusandae ullam placeat dolorum, odio expedita autem praesentium! Esse reprehenderit magni quidem ab doloremque dolores, perferendis, vitae amet!
+url:
+baseurl:          ""
+author:
+- name:           Patrick Gurr
+- url:            http://smashingpat.com
+- email:          smashingpat@gmail.com
+
+
+
+# Build
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables",     "with_toc_data"]
+highlighter: pygments
+exclude:
+- 'node_modules'
+- 'bower_components'
+- 'bower.json'
+- 'gulpfile.js'
+- 'package.json'
+- 'README.md'
+
+collections:
+  stories:
+    output: true
+    permalink: /story/:title/
+    layout: "post"
+
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+  - scope:
+      path: story
+    values:
+      layout: "post"

@@ -1,0 +1,34 @@
+code {
+    font-family: monospace;
+}
+
+pre {
+
+    overflow: auto;
+    color: white;
+    padding: 0;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    position: relative;
+    margin-bottom: $spacing-large;
+
+
+    code {
+        font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+        font-size: 0.9rem;
+        background: none;
+        padding: 15px;
+        white-space: pre;
+        overflow: auto;
+        display: block;
+        text-shadow: 0 1px 1px rgba( $black, .5 );
+    }
+}

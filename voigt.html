@@ -1,0 +1,37 @@
+---
+layout: none
+---
+
+
+
+<section class="multi-slider grey-bg">
+    <div class="cover-slider__controls">
+        <span class="btn btn-next"></span> <span class="btn btn-prev"></span>
+    </div>
+    <div class="section__title">
+        <div class="icon"></div>
+        <h3>
+            Andere reizen naar Lapland
+        </h3>
+    </div>
+    <div class="cover-slider__controls">
+        <span class="btn btn-next"></span> <span class="btn btn-prev"></span>
+    </div>
+    <div class="container">
+        <ul class="slider thumbnails">
+
+        {% for item in site.data.voigt %}
+            <li class="thumbnails__item">
+                <figure>
+                    <span class="flags">{{item.kracht}}</span> <span class="text"></span>
+                    <h3>
+                        <span class="text">{{item.text}}</span>
+                    </h3>
+                    <img alt="{{item.photo}}" src="{{item.photo}}">
+                </figure>
+            </li>
+        {% endfor %}
+
+        </ul>
+    </div>
+</section>
