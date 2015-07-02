@@ -32,14 +32,12 @@ layout: page
 
             <div class="ingredients">
                 <h3>Ingredients:</h3>
-                <ul class="ingredients__list">
+                <div class="ingredients__list">
                     {% for ingredient in page.ingredients %}
-                        <li>
-                            <input  id="{{ingredient | replace:' ','' | downcase }}" type="checkbox">
-                            <label for="{{ingredient | replace:' ','' | downcase }}">{{ingredient}}</label>
-                        </li>
+                        <input  id="{{ingredient | replace:' ','' | downcase }}" type="checkbox">
+                        <label for="{{ingredient | replace:' ','' | downcase }}">{{ingredient}}</label>
                     {%endfor%}
-                </ul>
+                </div>
             </div>
 
             {{ content }}

@@ -1,4 +1,4 @@
-<article class="home-block cover-image" style="background-image: url({{site.baseurl}}{{node.images | first}});" alt="{{node.title}});">
+<article class="home-block cover-image">
 
         <header class="home-block__header">
             <h3 class="title">{{node.title}}</h3>
@@ -6,7 +6,13 @@
         </header>
 
         <footer class="home-block__footer">
-            <a href="{{site.baseurl}}{{node.url}}" class="home-block__link">Go</a>
+            <a href="{{site.baseurl}}{{node.url}}" class="home-block__link">
+                Let's make some {{node.title}}
+            </a>
         </footer>
+
+        <div class="home-block__image cover-image" style="background-image: url({{site.baseurl}}{{node.images | first}});" alt="{{node.title}});">
+            <img src="{{site.baseurl}}{{node.images | first}});" alt="{{node.title}})" alt="" class="cover-image__source">
+        </div>
 
 </article>

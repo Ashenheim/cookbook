@@ -11,15 +11,19 @@
     position: relative;
     color: $white;
     text-shadow: 0 1px 3px rgba( $black, .2 );
+    overflow: hidden;
 
     &__container {
         height: 100%;
         min-height: 100%;
         overflow-x: hidden;
+        background: $c-text;
     }
 
     &__header {
         padding: $gutter;
+        position: relative;
+        z-index: 2;
 
         .title {
             font-size: 3em;
@@ -28,13 +32,39 @@
 
     &__footer {
         @include position( absolute, null null 0 0 );
+        z-index: 2;
         padding: $gutter;
+        width: 100%;
+        text-align: right;
+    }
+
+
+    &__image {
+        @include position( absolute, 0 );
+        transition: all $easing--slow;
     }
 
     &__link {
-        padding: 20px;
-        border: 3px solid $white;
-        color: $white;
+        transition: all $easing--fast;
+        padding: 15px 20px;
+        background: $white;
+        color: $black;
+        text-shadow: none;
+        box-shadow: 0 1px 3px rgba( $black, .4 );
+        opacity: 0;
+        transform: translateY(20px) scale(.9);
+        transform-origin: 100% 100%;
+    }
+    html.touchevents &,
+    // &.is-selected,
+    &:hover {
+        .home-block__image {
+            transform: scale(1.1) rotate(2deg);
+        }
+        .home-block__link {
+            opacity: 1;
+            transform: none;
+        }
     }
 }
 
@@ -47,23 +77,24 @@
 
     &__list {
         margin-top: $spacing-large;
+        @include display(flex);
+        @include flex-direction(column);
     }
 
     li {
-        list-style-type: none;
-        margin-left: 0;
-        line-height: 1;
-        position: relative;
+
     }
 
     label {
         position: relative;
         padding-left: 2.5em;
+        margin-bottom: $spacing-small;
         line-height: 1.5;
+        position: relative;
+        @include order(0);
 
         &:before {
             @include size( 1.5em );
-            @include transition(all $easing);
             @include position( absolute, 0 null null 0 );
             content: '';
             border: 1px solid $c-text;
@@ -74,9 +105,14 @@
 
     input[type="checkbox"] { display: none; }
 
-    input[type="checkbox"]:checked + label:before {
-        background: $c-text;
-        border-color: $black;
+    input[type="checkbox"]:checked + label {
+        @include order(1);
+        text-decoration: line-through;
+
+        &:before {
+            background: $c-text;
+            border-color: $black;
+        }
     }
 
 }
