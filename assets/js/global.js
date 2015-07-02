@@ -15802,9 +15802,10 @@ $(document).ready(function() {
     $('.home-block__container').flickity({
         // options
         cellAlign: 'left',
-        contain: true,
         cellSelector: '.home-block'
     });
+    console.log('Smoothstate');
+
 
     /* ------------------------------
         Events
