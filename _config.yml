@@ -10,7 +10,7 @@ description: >
 
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quos error incidunt recusandae ullam placeat dolorum, odio expedita autem praesentium! Esse reprehenderit magni quidem ab doloremque dolores, perferendis, vitae amet!
 url:
-baseurl:          ""
+baseurl:          "/cookbook"
 author:
 - name:           Patrick Gurr
 - url:            http://smashingpat.com
