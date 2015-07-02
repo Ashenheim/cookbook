@@ -29,7 +29,7 @@ module.exports = {
             "_layouts/**",
             "_posts/**",
             "_data/**",
-            "_stories/**",
+            "_recipies/**",
             "_config.yml", "_config.dev.yml"
         ],
         dest: paths.dest

@@ -32,9 +32,9 @@ exclude:
 - 'README.md'
 
 collections:
-  stories:
+  recipies:
     output: true
-    permalink: /story/:title/
+    permalink: /recipe/:title/
     layout: "post"
 
 
@@ -44,6 +44,6 @@ defaults:
     values:
       layout: "page"
   - scope:
-      path: story
+      path: recipe
     values:
       layout: "post"

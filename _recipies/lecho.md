@@ -1,8 +1,11 @@
 ---
-title: Lecho
+title: Lecsó
 author: Teck
 
-ingredients
+images:
+- /images/lecho/lecho.jpg
+
+ingredients:
 - 1kg Paprika
 - 1-2 unions
 - 2 tomato's

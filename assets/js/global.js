@@ -10685,7 +10685,6 @@ $(document).ready(function() {
     ------------------------------ */
 
     overlay();
-    progressbar();
     optionsMenu();
     smoothState();
 
