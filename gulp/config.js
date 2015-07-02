@@ -71,6 +71,8 @@ module.exports = {
             src: [
                 paths.js + '/modernizr.js',
                 paths.bower + '/jquery/dist/jquery.js',
+                paths.bower + '/flickity/dist/flickity.pkgd.js',
+
                 paths.js + '/vendors/**/*.js',
                 paths.js + '/partials/**/*.js',
                 paths.js + '/init.js'
