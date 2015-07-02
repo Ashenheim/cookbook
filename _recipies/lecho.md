@@ -1,6 +1,8 @@
 ---
-title: Lecsó
-author: Teck
+title: Lecho
+synonyms:
+- Lecsó
+author: Teck Husky
 
 images:
 - /images/lecho/lecho.jpg

@@ -9,12 +9,6 @@ layout: compress
 
 <body class="page-{{ page.title | replace:' ','-' | downcase }}">
 
-    {% include controls.html %}
-
-    <div class="bar__container">
-        <div class="bar" id="progressBar"></div>
-    </div>
-
     <div class="site-wrap m-scene" id="Page">
 
         {% include header.html %}
@@ -24,26 +18,6 @@ layout: compress
         {% include footer.html %}
 
     </div>
-    {%comment%}
-    <section class="sidebar">
-        <ul>
-            {% for name in site.data.navigation %}
-            <li>
-                <span class="list-title">{{name}}</span>
-                <ul>
-                    {% for chapter in site.stories %}
-                    {% if chapter.info.story-title == name %}
-                    <li>
-                        <a href="{{chapter.url}}">{{chapter.title}}</a>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </section>
-    {%endcomment%}
 
     <div id="overlay" class="overlay">
         <div class="spinner"></div>

@@ -6,25 +6,19 @@ layout: page
     {{ content }}
 </div>
 
-<section class="article-short__container">
+<section class="home-block__container">
 {% assign recipies = site.recipies | sort: 'date' %}
 {% for node in recipies | limit:6 %}
 
-    <a href="{{site.baseurl}}{{node.url}}" class="article-short__link">
-        <article class="article-short">
+        <article class="home-block" style="background-image: url({{site.baseurl}}{{node.images | first}}" alt="{{node.title}});">
+            <a href="{{site.baseurl}}{{node.url}}" class="home-block__link">
 
-            <header class="article__header scene_element scene_element--fadeindown">
+
                 <h3>{{node.title}}</h3>
-            </header>
+                <img src="{{site.baseurl}}{{node.images | first}}" alt="{{node.title}}" class="cover-image__source">
 
-            <section class="article__content">
-                <div class="cover-image" style="background-image: url({{site.baseurl}}{{node.images | first}});">
-                    <img src="{{site.baseurl}}{{node.images | first}}" alt="{{node.title}}" class="cover-image__source">
-                </div>
-            </section>
-
+            </a>
         </article>
-    </a>
 
 {% endfor %}
 </section>

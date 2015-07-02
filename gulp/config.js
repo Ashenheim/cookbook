@@ -49,7 +49,7 @@ module.exports = {
         },
         settings: {
             style: 'compressed',
-            errLogToConsole: true
+            errLogToConsole: false
         },
         autoprefixer: [
             'last 2 versions',

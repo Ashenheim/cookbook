@@ -20,10 +20,23 @@ var gulp         = require('gulp'),
     Tasks & Functions
 ------------------------------------ */
 
+var onError = function (err) {
+    var errorMessage =
+        '<span style="color: #f10000;">Sass error: </span>' + err.message +
+        '<span style="display: block; color: #ccc; font-size: 80%;"> on line: <span style="color: #fff;">' +
+            err.lineNumber +
+        '</span></span>' +
+        '<span style="display: block; color: #ccc; font-size: 80%;"> in file: <span style="color: #fff;">' + err.fileName + '</span></span>';
+
+    console.log(err);
+    browserSync.notify(errorMessage);
+    this.emit('end');
+};
+
 gulp.task('styles', function() {
     browserSync.notify('<span style="color: grey">Running:</span> Sass compiling');
     return gulp.src( config.src )
-        .pipe(plumber())
+        .pipe(plumber({ errorHandler: onError }))
         .pipe(sourcemaps.init())
         .pipe(sass( config.settings )) 
         .pipe(prefix( config.autoprefixer ))
