@@ -1,7 +1,7 @@
 ---
 title: Lecho
 foreign-name: Lecsó
-author: Teck Husky
+author: Bali
 
 images:
 - /images/lecho/lecho.jpg
