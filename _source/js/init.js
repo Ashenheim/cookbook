@@ -22,11 +22,13 @@ $(document).ready(function() {
         cellSelector: '.home-block',
         pageDots: false,
         prevNextButtons: false,
-        contain: true
+        contain: true,
+        wrapAround: true
     });
 
     $slider.flickity();
 
+    Cookies();
 
     /* ------------------------------
         Events
