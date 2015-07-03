@@ -3,24 +3,76 @@
     Cookies = function() {
         'use strict';
 
-        var $checkBox = $('.ingredients input');
+        var $container = $('.ingredients');
 
-        console.log("Create cookies!");
+        var $checkbox = $container.find(':checkbox'),
+            _listName = $container.attr('data-list-id'),
+            checkboxState,
+            storedList,
+            checkboxArray = [],
+            $name,
+            $value,
+            createArray,
+            checkData,
+            storeData,
+            init,
+            $i;
 
-        $checkBox.each(function() {
-            var mycookie = $.cookie($(this).attr('id'));
-            if (mycookie && mycookie == "true") {
-                $(this).prop('checked', mycookie);
-            }
+        createArray = function() {
+            checkboxArray = []; // Clears the previous list
 
-            console.log(mycookie);
-        });
-        $checkBox.change(function() {
-            $.cookie($(this).attr("id"), $(this).prop('checked'), {
-                path: '/',
-                expires: 365
+            $checkbox.each(function() {
+                $name  = $(this).attr('id');
+                if ( $(this).is(':checked') ) {
+                    $value = true;
+                } else {
+                    $value = false;
+                }
+
+                checkboxArray.push({
+                    "name": $name,
+                    "value": $value
+                });
             });
-        });
+
+            // for( var $i=0; $i < checkboxArray.length; $i++ ) {
+            //     console.log(checkboxArray[$i]);
+            // }
+        }
+
+        checkData = function() {
+            if( localStorage.getItem( _listName ) ) {
+                storedList = JSON.parse( localStorage.getItem( _listName ) );
+
+                for( $i=0; $i < storedList.length; $i++ ) {
+
+                    if(storedList[$i].value) {
+                        $( '#' + storedList[$i].name ).prop( 'checked', true );
+                    }
+                }
+            }
+        }
+
+        storeData = function(data) {
+            localStorage.removeItem( _listName );
+            localStorage.setItem( _listName , JSON.stringify(checkboxArray) );
+        }
+
+        init = function() {
+            checkData();
+            createArray();
+            storeData(checkboxArray);
+
+            $checkbox.on('change', function() {
+                createArray();
+                storeData(checkboxArray);
+            })
+        }
+
+        if($checkbox[0]) {
+            init();
+        }
+
     }
 
 }(jQuery));

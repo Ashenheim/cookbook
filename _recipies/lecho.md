@@ -10,13 +10,13 @@ ingredients:
 - ~1kg Paprika
 - 1-2 medium-sized Onions
 - 2 Tomato's
-- Sunflower oil ( enough to cover the bottom of the pot )
+- Sunflower oil
 - 2 big teaspoons of Pepper-powder
 ---
 
 ### Preparations
 
-1. cut it in slices, throw away the "seed-holder"
+1. cut it in slices, throw away the innards together with the seeds
 2. Cut the union in quarter rings
 3. Cut the tomato's in small bitable bits
 

@@ -35,10 +35,9 @@ $(document).ready(function() {
     ------------------------------ */
 
     $window.on('load', function(e) {
-        console.log( "Page loaded" );
         setTimeout(function() {
             $window.trigger('overlay');
-        }, 600);
+        }, 10);
     });
 
 });

@@ -30,12 +30,13 @@ layout: page
 
         <section class="article__content scene_element scene_element--fadeinup">
 
-            <div class="ingredients">
+            <div class="ingredients" data-list-id="{{ page.title | replace:' ','-' | downcase}}">
                 <h3>Ingredients:</h3>
                 <div class="ingredients__list">
                     {% for ingredient in page.ingredients %}
-                        <input  id="{{ingredient | replace:' ','' | downcase }}" type="checkbox">
-                        <label for="{{ingredient | replace:' ','' | downcase }}">{{ingredient}}</label>
+                        {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+                        <input  id="{{ page.title | replace:' ','-' | downcase}}-{{count}}" type="checkbox">
+                        <label for="{{ page.title | replace:' ','-' | downcase}}-{{count}}">{{ingredient}}</label>
                     {%endfor%}
                 </div>
             </div>
