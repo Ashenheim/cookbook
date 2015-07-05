@@ -3,7 +3,7 @@ title: Grilled Banana Nutella Sandwich
 author: Pat
 
 images:
-- /images/grilled-banana-nutella-sandwich/Grilled-Banana-Nutella-Sandwich.jpg
+- /images/grilled-banana-nutella-sandwich/grilled-banana-nutella-sandwich.jpg
 
 ingredients:
 - 4 slices of seeded whole grain bread (or any bread you like)
