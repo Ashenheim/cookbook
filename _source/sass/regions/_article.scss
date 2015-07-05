@@ -4,6 +4,8 @@
 
 
 .article {
+    background-position: center left;
+    background-attachment: fixed;
 
     @include bp( ( $site-width + $gutter ) ) {
         padding-left: $gutter;
