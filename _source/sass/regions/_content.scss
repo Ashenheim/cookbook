@@ -84,6 +84,10 @@
     }
 }
 
+/*
+    #Ingredient list
+    ------------------------------------ */
+
 .ingredients {
     background: $c-accent;
     margin-left: -#{$gutter};
@@ -110,8 +114,7 @@
         padding: 2px 5px;
         float: right;
         color: darken($c-accent, 20%);
-        background: $white;
-        
+
         >.collapse { display: none; }
 
         &:hover, &:active, &:focus {
@@ -160,7 +163,7 @@
         @include order(1);
         color: $c-success;
 
-        &:before { background: currentcolor; }
+        &:before { background: $c-success; border-color: darken($c-success, 15%) }
     }
 
 }
