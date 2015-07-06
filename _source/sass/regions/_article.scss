@@ -32,7 +32,7 @@
         text-align: center;
 
         >.title {
-            font-size: 3em;
+            font-size: 2em;
 
             small {
                 display: block;
@@ -63,6 +63,7 @@
         height: 10em;
         margin-left:  -#{$gutter};
         margin-right: -#{$gutter};
+        margin-bottom: $spacing-medium;
     }
 
     &__content {
@@ -141,29 +142,14 @@
 
 
 .home-link {
-    margin-left:  -#{$gutter};
-    margin-right: -#{$gutter};
-    margin-bottom: $spacing-medium;
+    margin: $spacing-medium 0;
     color: $c-accent--d;
     padding: 15px 25px;
-    text-align: right;
-    display: block;
-    font-size: 1.2em;
-    border-bottom: 1px solid rgba( $black, .03 );
+    display: inline-block;
+    font-size: .8em;
+    border: 1px solid $c-accent--d;
 
+    &:hover { color: $c-link; }
+    &:active, &:focus { color: $white; background: $c-link; }
 
-    &:hover {
-        color: $c-link;
-    }
-
-    &:active, &:focus {
-        color: $white;
-        background: $c-link;
-    }
-
-
-    svg {
-        display: block;
-        max-width: 45px !important;
-    }
 }

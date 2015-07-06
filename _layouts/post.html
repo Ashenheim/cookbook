@@ -6,13 +6,11 @@ layout: page
 
     <div class="article__container">
 
+        <a class="home-link" href="{{site.baseurl}}/">Go back</a>
+
         <div class="article__banner cover-image" style="background-image: url({{site.baseurl}}{{page.images | first}})">
             <img src="{{site.baseurl}}{{page.images | first}}" alt="" class="cover-image__source">
         </div>
-
-        <a class="home-link" href="{{site.baseurl}}/">
-            {% include svg.html id="close" viewbox="14 14" %}
-        </a>
 
         <header class="article__header scene_element scene_element--fadeindown">
             <h1 class="title">
@@ -46,7 +44,6 @@ layout: page
         </section>
 
         <footer class="article__footer"></footer>
-
     </div>
 
 </article>

@@ -11,7 +11,14 @@
     color: $white;
     text-shadow: 0 1px 3px rgba( $black, .2 );
     overflow: hidden;
-    border-right: 1px solid $c-text;
+
+    &:after {
+        content: '';
+        background: $black;
+        @include position( absolute, 0 0 null null );
+        height: 100%;
+        width: 2px;
+    }
 
     @include bp-small {
         min-width: 400px;
@@ -26,15 +33,16 @@
     }
 
     &__header {
+        @include linear-gradient(top, rgba( $black, .6), rgba( $black, 0 ) );
+        background-color: transparent;
         padding: $gutter;
         position: relative;
         z-index: 2;
 
         .title {
             font-size: 1.5em;
-            @include bp-medium {
-                font-size: 3em;
-            }
+            @include bp(600px) { font-size: 2em; }
+            @include bp(900px) { font-size: 3em; }
         }
     }
 
@@ -89,9 +97,7 @@
         @include flex-direction(column);
     }
 
-    li {
-
-    }
+    li {}
 
     label {
         position: relative;
