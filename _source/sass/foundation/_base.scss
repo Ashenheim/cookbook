@@ -39,3 +39,7 @@ body {
         display: block;
     }
 }
+
+html.is-fixed {
+    overflow: hidden;
+}

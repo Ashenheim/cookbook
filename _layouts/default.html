@@ -9,19 +9,17 @@ layout: compress
 
 <body class="page-{{ page.title | replace:' ','-' | downcase }}">
 
-    <div class="site-wrap m-scene" id="Page">
+    <div class="site-wrap" id="Page">
 
         {% include header.html %}
-        <main id="main" class="main-content scene_element scene_element--fadein" data-page-id="page-{{ page.title | replace:' ','-' | downcase }}">
+        <main id="main" class="main-content" data-page-id="page-{{ page.title | replace:' ','-' | downcase }}">
             {{content}}
         </main>
         {% include footer.html %}
 
     </div>
 
-    <div id="overlay" class="overlay">
-        <div class="spinner"></div>
-    </div>
+    <div id="overlay" class="overlay"></div>
 
 
     {% if site.dev %}

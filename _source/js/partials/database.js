@@ -1,6 +1,6 @@
 (function($) {
 
-    Cookies = function() {
+    storeChecklist = function() {
         'use strict';
 
         var $container = $('.ingredients');
@@ -34,10 +34,6 @@
                     "value": $value
                 });
             });
-
-            // for( var $i=0; $i < checkboxArray.length; $i++ ) {
-            //     console.log(checkboxArray[$i]);
-            // }
         }
 
         checkData = function() {
@@ -69,6 +65,7 @@
             })
         }
 
+        // Checks if $checkbox excist, then runs init();
         if($checkbox[0]) {
             init();
         }

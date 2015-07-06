@@ -12,7 +12,7 @@ layout: page
             <img src="{{site.baseurl}}{{page.images | first}}" alt="" class="cover-image__source">
         </div>
 
-        <header class="article__header scene_element scene_element--fadeindown">
+        <header class="article__header">
             <h1 class="title">
                 {% if page.info.story-title %}<small>{{page.info.story-title}}</small>{% endif %}
                 {{page.title}}
@@ -26,18 +26,27 @@ layout: page
             <hr>
         </header>
 
-        <section class="article__content scene_element scene_element--fadeinup">
-
+        <section class="article__content">
+            {% if page.ingredients %}
             <div class="ingredients" data-list-id="{{ page.title | replace:' ','-' | downcase}}">
-                <h3>Ingredients:</h3>
-                <div class="ingredients__list">
-                    {% for ingredient in page.ingredients %}
-                        {% capture count %}{{ count | plus: '1' }}{% endcapture %}
-                        <input  id="{{ page.title | replace:' ','-' | downcase}}-{{count}}" type="checkbox">
-                        <label for="{{ page.title | replace:' ','-' | downcase}}-{{count}}">{{ingredient}}</label>
-                    {%endfor%}
+                <div class="ingredients__inner">
+                    <h3>
+                        Ingredients
+                        <a href="#" class="ingredients__trigger">
+                            <span class="expand">{% include svg.html id="expand" viewbox="60 60" %}</span>
+                            <span class="collapse">{% include svg.html id="collapse" viewbox="60 60" %}</span>
+                        </a>
+                    </h3>
+                    <div class="ingredients__list">
+                        {% for ingredient in page.ingredients %}
+                            {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+                            <input  id="{{ page.title | replace:' ','-' | downcase}}-{{count}}" type="checkbox">
+                            <label for="{{ page.title | replace:' ','-' | downcase}}-{{count}}">{{ingredient}}</label>
+                        {%endfor%}
+                    </div>
                 </div>
             </div>
+            {% endif %}
 
             {{ content }}
 

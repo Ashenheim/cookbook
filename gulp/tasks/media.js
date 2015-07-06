@@ -28,7 +28,8 @@ gulp.task('media', function() {
         .pipe(svgmin({
             plugins: [
                 { removeViewBox: false },
-                { removeUselessStrokeAndFill: false }
+                { removeUselessStrokeAndFill: false },
+                { moveGroupAttrsToElems: false }
             ]
         }))
         .pipe(gulp.dest( config.dest[0] ))

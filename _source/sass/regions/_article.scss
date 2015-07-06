@@ -14,12 +14,19 @@
         }
     }
 
+    .cover-image {
+        height: 20em;
+        margin-left:  -#{$gutter};
+        margin-right: -#{$gutter};
+        margin-bottom: $spacing-medium;
+    }
+
     &__container {
         @include padding( 0 $gutter $spacing-large );
         max-width: $site-width;
         min-height: 100vh;
         background: $c-background;
-        box-shadow: 0 0 13px rgba( $black, .05 );
+        box-shadow: 0 0 5px rgba( $black, .4 );
     }
 
     html.dark-mode & {
@@ -57,13 +64,6 @@
 
             img { display: block; }
         }
-    }
-
-    .cover-image {
-        height: 10em;
-        margin-left:  -#{$gutter};
-        margin-right: -#{$gutter};
-        margin-bottom: $spacing-medium;
     }
 
     &__content {}

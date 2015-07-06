@@ -28,11 +28,16 @@ $(document).ready(function() {
 
     $slider.flickity();
 
-    Cookies();
+    storeChecklist();
 
     /* ------------------------------
         Events
     ------------------------------ */
+
+    $('.ingredients__trigger').on('click', function(event) {
+        event.preventDefault();
+        $html.toggleClass('is-fixed list-is-fullscreen');
+    });
 
     $window.on('load', function(e) {
         setTimeout(function() {
