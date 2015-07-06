@@ -66,26 +66,7 @@
         margin-bottom: $spacing-medium;
     }
 
-    &__content {
-
-        p:first-of-type::first-letter {
-            font-size: 1.4em;
-            line-height: 1;
-        }
-
-        p {
-            line-height: 2;
-        }
-
-
-        html.fontsize-is-small & {
-            font-size: $font-size--small;
-        }
-
-        html.fontsize-is-large & {
-            font-size: $font-size--large;
-        }
-    }
+    &__content {}
 }
 
 
