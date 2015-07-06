@@ -2,17 +2,17 @@
 
         <header class="home-block__header">
             <h3 class="title">{{node.title}}</h3>
-            <img src="{{site.baseurl}}{{node.images | first}}" alt="{{node.title}}" class="cover-image__source">
+            <img src="{{node.images | first | prepend: site.baseurl }}" alt="{{node.title}}" class="cover-image__source">
         </header>
 
         <footer class="home-block__footer">
-            <a href="{{site.baseurl}}{{node.url}}" class="home-block__link">
+            <a href="{{node.url | prepend: site.baseurl }}" class="home-block__link">
                 View recipe
             </a>
         </footer>
 
-        <div class="home-block__image cover-image" style="background-image: url({{site.baseurl}}{{node.images | first}});" alt="{{node.title}});">
-            <img src="{{site.baseurl}}{{node.images | first}});" alt="{{node.title}})" alt="" class="cover-image__source">
+        <div class="home-block__image cover-image" style="background-image: url({{node.images | first | prepend: site.baseurl }});" alt="{{node.title}});">
+            <img src="{{node.images | first | prepend: site.baseurl }});" alt="{{node.title}})" alt="" class="cover-image__source">
         </div>
 
 </article>

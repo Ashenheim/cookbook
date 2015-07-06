@@ -23,9 +23,9 @@ layout: compress
 
 
     {% if site.dev %}
-    <script src="{{ site.baseurl }}/assets/js/global.js"></script>
+    <script src="{{ "/assets/js/global.js" | prepend: site.baseurl }}"></script>
     {% else %}
-    <script src="{{ site.baseurl }}/assets/js/global.min.js"></script>
+    <script src="{{ "/assets/js/global.min.js" | prepend: site.baseurl }}"></script>
     {% endif %}
 
 </body>

@@ -2,14 +2,14 @@
 layout: page
 ---
 
-<article class="article cover-image" id="Story" style="background-image: url({{site.baseurl}}{{page.images | first}})">
+<article class="article cover-image" id="Story" style="background-image: url({{page.images | first | prepend: site.baseurl }})">
 
     <div class="article__container">
 
         <a class="home-link" href="{{site.baseurl}}/">Go back</a>
 
-        <div class="article__banner cover-image" style="background-image: url({{site.baseurl}}{{page.images | first}})">
-            <img src="{{site.baseurl}}{{page.images | first}}" alt="" class="cover-image__source">
+        <div class="article__banner cover-image" style="background-image: url({{page.images | first | prepend: site.baseurl }})">
+            <img src="{{ page.images | first | prepend: site.baseurl }}" alt="" class="cover-image__source">
         </div>
 
         <header class="article__header">
