@@ -105,15 +105,16 @@
     }
 
     &__trigger {
-        font-size: .7em;
         color: $c-text;
         display: inline-block;
-        padding: 5px;
+        padding: 2px 5px;
         float: right;
         color: darken($c-accent, 20%);
+        background: $white;
+        
         >.collapse { display: none; }
 
-        &:hover {
+        &:hover, &:active, &:focus {
             color: darken($c-accent, 30%);
         }
 
@@ -132,12 +133,14 @@
     label {
         position: relative;
         padding-left: 2.5em;
-        padding-bottom: $spacing-medium;
+        padding-bottom: $spacing-small;
+        margin-bottom: $spacing-small;
         line-height: 1.5;
         position: relative;
         font-weight: bold;
         transition: all $easing;
         transform-origin: 0% 50%;
+        border-bottom: 1px solid $c-accent--d;
         @include order(0);
 
         &:before {
@@ -156,7 +159,6 @@
     input[type="checkbox"]:checked + label {
         @include order(1);
         color: $c-success;
-        transform: scale(.9);
 
         &:before { background: currentcolor; }
     }
