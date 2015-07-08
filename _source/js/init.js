@@ -1,3 +1,25 @@
+;(function ($) {
+    fullscreenToggle = function(param) {
+        'use strict';
+
+        var $html = $('html');
+        var $element = $('.ingredients');
+
+        $element.find('.ingredients__trigger').on('click', function(event) {
+            event.preventDefault();
+            $html.toggleClass('is-fixed list-is-fullscreen');
+
+            console.log( $element.attr('data-fullscreen') );
+
+            if ( $element.attr('data-fullscreen') == "false" ) {
+                $element.attr('data-fullscreen', true);
+            } else {
+                $element.attr('data-fullscreen', false);
+            }
+        });
+    }
+}(jQuery));
+
 $("html").removeClass('no-js').addClass('js');
 
 $(document).ready(function() {
@@ -12,10 +34,6 @@ $(document).ready(function() {
         Initiations
     ------------------------------ */
 
-    overlay();
-    optionsMenu();
-    // smoothState();
-
     var $slider = $('.home-block__container').flickity({
         // options
         cellAlign: 'left',
@@ -29,20 +47,10 @@ $(document).ready(function() {
     $slider.flickity();
 
     storeChecklist();
+    fullscreenToggle();
 
     /* ------------------------------
         Events
     ------------------------------ */
-
-    $('.ingredients__trigger').on('click', function(event) {
-        event.preventDefault();
-        $html.toggleClass('is-fixed list-is-fullscreen');
-    });
-
-    $window.on('load', function(e) {
-        setTimeout(function() {
-            $window.trigger('overlay');
-        }, 10);
-    });
 
 });

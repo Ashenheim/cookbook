@@ -7,7 +7,7 @@
     background-position: center left;
     background-attachment: fixed;
 
-    @include bp( ( $site-width + $gutter ) ) {
+    @include bp( $bp-medium ) {
         padding-left: $gutter;
         .cover-image {
             display: none;
@@ -28,12 +28,6 @@
         background: $c-background;
         box-shadow: 0 0 5px rgba( $black, .4 );
     }
-
-    html.dark-mode & {
-        background: invert($c-background);
-        color: rgba( $white, .8 );
-    }
-
 
     &__header {
         text-align: center;

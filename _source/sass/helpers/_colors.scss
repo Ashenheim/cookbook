@@ -5,7 +5,7 @@
 $colors-key: 'base' !default;
 $colors: (
   'primary': (
-    'base': #8e3329,
+    'base': #8e2929,
     'light': #d9534f,
     'dark': #c9302c
   ),
@@ -26,11 +26,29 @@ $colors: (
     'darker': #000000
   ),
   'background': (
-    'base': #e9e9e9,
+    'base': #fbf9f9,
     'light': #ffffff,
-    'dark': #dddddd
+    'dark': #e9e9e9
   )
 );
+
+
+
+
+@function color(
+	$name: 'primary',
+	$variant: $colors-key
+) {
+
+	$color: null;
+	$color-key: map-get($colors, $name);
+
+	@if $color-key {
+		$color: map-get($color-key, $variant);
+	}
+	// Output $color
+	@return $color;
+}
 
 // Variables
 // ---------
@@ -47,19 +65,19 @@ $c-focus                    : #09F;
 
 
 // Brand
-$c-main                     : #CC0000;
-$c-sec                      : #EE3C3F;
+$c-main                     : color('primary');
+$c-sec                      : color('secondary');
 
 
-$c-accent--l                : #f9f9f9;
-$c-accent                   : #e4e9eb;
-$c-accent--d                : #cfd8dc;
+$c-accent--l                : color('accent', 'light');
+$c-accent                   : color('accent');
+$c-accent--d                : color('accent', 'dark');
 
 
 // Text
 $c-text                     : rgba($black, .8);
 $c-link                     : $c-main;
-$c-link--hover              : lighten(saturate($c-link, 30%),10%);
+$c-link--hover              : $c-main;
 
 // Layout
 $c-background               : $c-accent--l;
@@ -69,11 +87,3 @@ $c-background               : $c-accent--l;
 $c-facebook                 : #03539e;
 $c-twitter                  : #35ccff;
 $c-linkedin                 : #217bc1;
-
-
-
-// Functions
-
-@function c-main($p) {
-    @return mix( $c-main, $white, $p );
-}

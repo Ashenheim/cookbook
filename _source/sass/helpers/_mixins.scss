@@ -59,22 +59,6 @@
 }
 
 
-@function color(
-	$name: 'primary',
-	$variant: $colors-key
-) {
-
-	$color: null;
-	$color-key: map-get($colors, $name);
-
-	@if $color-key {
-		$color: map-get($color-key, $variant);
-	}
-	// Output $color
-	@return $color;
-}
-
-
 @mixin cf {
 	@extend %clearfix;
 }

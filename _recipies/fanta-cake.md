@@ -1,6 +1,6 @@
 ---
 title: Fanta Cake
-author: Farkaskutya (written by Codie)
+author: Codie & recipe by Farkaskutya
 
 images:
 - /images/fanta-cake/fanta-cake.jpg

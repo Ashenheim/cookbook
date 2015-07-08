@@ -1,0 +1,18 @@
+<div class="ingredients" data-listid="{{ page.title | replace:' ','-' | downcase}}" data-fullscreen="false">
+    <div class="ingredients__inner">
+        <h3>
+            Ingredients
+            <a href="#" class="ingredients__trigger">
+                <span class="expand">{% include svg.html id="expand" viewbox="60 60" %}</span>
+                <span class="collapse">{% include svg.html id="collapse" viewbox="60 60" %}</span>
+            </a>
+        </h3>
+        <div class="ingredients__list">
+            {% for ingredient in page.ingredients %}
+                {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+                <input  id="{{ page.title | replace:' ','-' | downcase}}-{{count}}" type="checkbox">
+                <label for="{{ page.title | replace:' ','-' | downcase}}-{{count}}">{{ingredient}}</label>
+            {%endfor%}
+        </div>
+    </div>
+</div>

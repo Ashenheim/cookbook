@@ -43,5 +43,6 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/'}))
         .pipe(gulp.dest( config.dest.one ))
         .pipe(gulp.dest( config.dest.two ))
-        .pipe( browserSync.reload({stream:true}) );
+        .pipe(plumber.stop())
+        .pipe(browserSync.reload({stream:true}));
 });

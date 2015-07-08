@@ -6,7 +6,7 @@
         var $container = $('.ingredients');
 
         var $checkbox = $container.find(':checkbox'),
-            _listName = $container.attr('data-list-id'),
+            _listName = $container.attr('data-listid'),
             checkboxState,
             storedList,
             checkboxArray = [],
@@ -16,10 +16,12 @@
             checkData,
             storeData,
             init,
-            $i;
+            $i,
+            fullscreenValue;
 
         createArray = function() {
             checkboxArray = []; // Clears the previous list
+            fullscreenValue = $container.attr('data-fullscreen');
 
             $checkbox.each(function() {
                 $name  = $(this).attr('id');
@@ -34,6 +36,10 @@
                     "value": $value
                 });
             });
+
+            checkboxArray.push({
+                "fullscreen": fullscreenValue
+            })
         }
 
         checkData = function() {
@@ -52,6 +58,8 @@
         storeData = function(data) {
             localStorage.removeItem( _listName );
             localStorage.setItem( _listName , JSON.stringify(checkboxArray) );
+
+            // console.log(localStorage.getItem( _listName ));
         }
 
         init = function() {
